@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'LimWebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['appfront/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +66,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "appfront/dist/static"),
 ]
 
 WSGI_APPLICATION = 'LimWebsite.wsgi.application'
