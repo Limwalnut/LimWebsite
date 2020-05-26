@@ -12,7 +12,7 @@
     data(){
       return{
         coordinate:[],
-        coordinateY:''
+        arr:[]
       }
     },
     mounted() {
@@ -25,7 +25,7 @@
     },
     watch: {
       coordinate(coordinate){
-        draw(coordinate)
+        draw(coordinate[0],coordinate[1], this.$refs.myCanvas, window, this.arr)
       }
     },
 
