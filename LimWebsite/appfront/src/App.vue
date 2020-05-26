@@ -1,8 +1,7 @@
 <template>
-  <div id="app" @mousemove="move">
+  <div id="app">
     <MyCanvas ref="MyCanvas"></MyCanvas>
     <introduction ></introduction>
-
 <!--    <MainContent></MainContent>-->
   </div>
 </template>
@@ -16,19 +15,11 @@
     name: 'App',
     data(){
       return {
-        mouseposition:[this.mouseX, this.mouseY],
-        mouseX:'',
-        mouseY:''
+
       }
     },
     methods:{
-      move(event){
-        this.mouseX = event.clientX
-        this.mouseY = event.clientY
-        // console.log(event.clientX + ", " +event.clientY)
-        this.$refs.MyCanvas.getPosition([this.mouseX,this.mouseY])
-        // console.log(this.mouseX + ", " +this.mouseY)
-      }
+
     },
     components:{
       introduction,

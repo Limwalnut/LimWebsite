@@ -12,23 +12,16 @@
     data(){
       return{
         coordinate:[],
-        arr:[]
+        scheduledAnimationFrame: false,
       }
     },
     mounted() {
       InitCanvas(this.$refs.myCanvas,window)
+      draw()
     },
     methods:{
-      getPosition(arr){
-        this.coordinate = arr
-      }
-    },
-    watch: {
-      coordinate(coordinate){
-        draw(coordinate[0],coordinate[1], this.$refs.myCanvas, window, this.arr)
-      }
-    },
 
+    },
   }
 </script>
 

@@ -2,14 +2,14 @@
     <div>
       <section ref="intro_ref" id="intro" >
         <header ref="heading">
-          <h1 id="intro_heading">
+          <h1 id="intro_heading" ref="intro_heading">
             Hello,
             <br>
             I'm Lim Zhang,
             <br>
             An web developer.
           </h1>
-          <h2 id="intro_heading_2">
+          <h2 id="intro_heading_2" ref="intro_heading_2">
             And I love photography, traveling and games.
           </h2>
           <div id="slice_left" class="slice_left" ref="slice_left" :style="{transform: 'translate(0,0)'}"></div>
