@@ -3,13 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import introduction from './components/introduction'
-import MainContent from './components/MainContent'
-import MyCanvas from './components/MyCanvas'
+import animate from 'animate.css'
+import $ from 'jquery'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap'
 
-// Vue.component('introduction', introduction)
-// Vue.component('MainContent', MainContent)
-// Vue.component('MyCanvas', MyCanvas)
+Vue.use(animate)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

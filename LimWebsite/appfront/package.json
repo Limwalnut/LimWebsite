@@ -9,11 +9,14 @@
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit",
+    "lint": "eslint --fix --ext .js,.vue src test/unit",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
+    "bootstrap": "^3.4.1",
     "element-ui": "^2.13.2",
+    "jquery": "^3.5.1",
     "vue": "^2.5.2",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1"

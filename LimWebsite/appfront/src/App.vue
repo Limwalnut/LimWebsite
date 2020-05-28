@@ -2,30 +2,31 @@
   <div id="app">
     <MyCanvas ref="MyCanvas"></MyCanvas>
     <introduction ></introduction>
-<!--    <MainContent></MainContent>-->
+    <MainContent></MainContent>
   </div>
 </template>
 
 <script>
-  import introduction from './components/introduction'
-  import MainContent from './components/MainContent'
-  import MyCanvas from './components/MyCanvas'
-  import {draw} from './assets/js/BackgroundCanvas'
-  export default {
-    name: 'App',
-    data(){
-      return {
+import introduction from './components/introduction'
+import MainContent from './components/MainContent'
+import MyCanvas from './components/MyCanvas'
 
-      }
-    },
-    methods:{
+export default {
+  name: 'App',
+  data () {
+    return {
 
-    },
-    components:{
-      introduction,
-      MyCanvas
     }
+  },
+  methods: {
+
+  },
+  components: {
+    introduction,
+    MyCanvas,
+    MainContent
   }
+}
 </script>
 
 <style>

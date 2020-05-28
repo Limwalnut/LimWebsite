@@ -1,0 +1,7 @@
+function inWinodw () {
+
+}
+
+export {
+  inWinodw
+}

@@ -18,53 +18,57 @@
         </header>
       </section>
 
-
     </div>
 </template>
 
-
 <script>
-  export default {
-    name: 'introduction',
-    data() {
-      return {
-        msg: 'this is header part'
-      }
+export default {
+  name: 'introduction',
+  data () {
+    return {
+      msg: 'this is header part'
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll, true)
+  },
+  methods: {
+    handleScroll () {
+      // var clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+      var scrollTop = document.documentElement.scrollTop
+      var scrollObj = this.$refs.intro_ref
+      // scrollObj.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      var rightPic = this.$refs.slice_right
+      var leftPic = this.$refs.slice_left
+      var header1 = this.$refs.intro_heading
+      var header2 = this.$refs.intro_heading_2
+      // var leftPic = this.$refs.slice_left.style.transform
+      leftPic.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 50 + '%)'
+      leftPic.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      rightPic.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 50 + '%)'
+      rightPic.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      header1.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 30 + '%)'
+      header1.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      header2.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 30 + '%)'
+      header2.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      // console.log(scrollTop)
     },
-    mounted() {
-      window.addEventListener('scroll', this.handleScroll, true)
-    },
-    methods: {
-      handleScroll() {
-        // var clientHeight = document.documentElement.clientHeight || document.body.clientHeight
-        var scrollTop = document.documentElement.scrollTop;
-        var scrollObj = this.$refs.intro_ref
-        scrollObj.style.opacity = (1 - (scrollTop/scrollObj.offsetHeight))
-        var rightPic = this.$refs.slice_right
-        var leftPic = this.$refs.slice_left
-        var header1 = this.$refs.intro_heading
-        var header2 = this.$refs.intro_heading_2
-        // var leftPic = this.$refs.slice_left.style.transform
-        leftPic.style.transform = 'translate(0,-'+(scrollTop/scrollObj.offsetHeight)*50+'%)'
-        rightPic.style.transform = 'translate(0,-'+(scrollTop/scrollObj.offsetHeight)*50+'%)'
-        header1.style.transform = 'translate(0,-'+(scrollTop/scrollObj.offsetHeight)*30+'%)'
-        header2.style.transform = 'translate(0,-'+(scrollTop/scrollObj.offsetHeight)*30+'%)'
-        // console.log(scrollTop)
-      },
-      destroyed(){
-        window.removeEventListener('scroll', this.handleScroll);
-      }
+    destroyed () {
+      window.removeEventListener('scroll', this.handleScroll)
     }
   }
+}
 </script>
 
 <style>
   #intro{
+    height: 1000px;
     display: flex;
     width: 100vw;
     justify-content: center;
     align-items: center;
-    /*background-color: rgba(255, 255, 0, 0.2)*/
+    background-color: black;
+    color: white;
   }
 
   header{
@@ -104,6 +108,5 @@
     background-size: cover;
     background-position: left;
   }
-
 
 </style>
