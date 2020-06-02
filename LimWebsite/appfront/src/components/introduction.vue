@@ -43,14 +43,14 @@ export default {
       var header1 = this.$refs.intro_heading
       var header2 = this.$refs.intro_heading_2
       // var leftPic = this.$refs.slice_left.style.transform
-      leftPic.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 50 + '%)'
-      leftPic.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
-      rightPic.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 50 + '%)'
-      rightPic.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
-      header1.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 30 + '%)'
-      header1.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
-      header2.style.transform = 'translate(0,-' + (scrollTop / scrollObj.offsetHeight) * 30 + '%)'
-      header2.style.opacity = (1 - (scrollTop / scrollObj.offsetHeight))
+      leftPic.style.transform = 'translate(0,-' + ((scrollTop - window.innerHeight) / scrollObj.offsetHeight) * 50 + '%)'
+      leftPic.style.opacity = (1 - ((scrollTop - window.innerHeight) / scrollObj.offsetHeight))
+      rightPic.style.transform = 'translate(0,-' + ((scrollTop - window.innerHeight) / scrollObj.offsetHeight) * 50 + '%)'
+      rightPic.style.opacity = (1 - ((scrollTop - window.innerHeight) / scrollObj.offsetHeight))
+      header1.style.transform = 'translate(0,-' + ((scrollTop - window.innerHeight) / scrollObj.offsetHeight) * 30 + '%)'
+      header1.style.opacity = (1 - ((scrollTop - window.innerHeight) / scrollObj.offsetHeight))
+      header2.style.transform = 'translate(0,-' + ((scrollTop - window.innerHeight) / scrollObj.offsetHeight) * 30 + '%)'
+      header2.style.opacity = (1 - ((scrollTop - window.innerHeight) / scrollObj.offsetHeight))
       // console.log(scrollTop)
     },
     destroyed () {
@@ -62,7 +62,7 @@ export default {
 
 <style>
   #intro{
-    height: 1000px;
+    height: 100vh;
     display: flex;
     width: 100vw;
     justify-content: center;
@@ -96,7 +96,7 @@ export default {
 
   .slice_right{
     grid-area: rs;
-    background-image: url("../assets/intro.jpg");
+    background-image: url("../assets/img/intro.jpg");
     background-size: cover;
     background-position: right;
     transform: translate(0, 0);
@@ -104,7 +104,7 @@ export default {
 
   .slice_left{
     grid-area: ls;
-    background-image: url("../assets/intro.jpg");
+    background-image: url("../assets/img/intro.jpg");
     background-size: cover;
     background-position: left;
   }

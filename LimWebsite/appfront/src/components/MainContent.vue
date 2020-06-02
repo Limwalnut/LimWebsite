@@ -1,32 +1,60 @@
 <template>
     <div id="content" ref="MainContent">
-      <ul ref="contentUl" id="contentUl">
-        <li class="list animate__animated text-left"  v-for="(item) in list" :key="item.id">
-          <div>
-            <div>
-              <span class="footTitle">{{item.title}}</span>
-              <span class="icon glyphicon glyphicon-send"></span>
-              <span class="pInLi">{{item.content}}</span>
-            </div>
-            <img class="list_pic" :src= "item.src" alt="">
+        <div class="container">
+          <div class="child1 animate__animated">
+            <h2>{{this.list[0].title}}</h2>
+            <p>{{this.list[0].content}}</p>
           </div>
-        </li>
-      </ul>
+          <div class="child2 animate__animated">
+            <img class="pic_right" :src="this.list[0].src" alt="">
+          </div>
+        </div>
+      <div class="container">
+        <div class="child1 animate__animated">
+          <img class="pic_right" :src="this.list[1].src" alt="">
+        </div>
+        <div class="child2 animate__animated">
+          <h2>{{this.list[1].title}}</h2>
+          <p>{{this.list[1].content}}</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="child1 animate__animated">
+          <h2>{{this.list[2].title}}</h2>
+          <p>{{this.list[2].content}}</p>
+        </div>
+        <div class="child2 animate__animated">
+          <img class="pic_right" :src="this.list[2].src" alt="">
+        </div>
+      </div>
+      <div class="container">
+        <div class="child1 animate__animated">
+          <img class="pic_right" :src="this.list[3].src" alt="">
+        </div>
+        <div class="child2 animate__animated">
+          <h2>{{this.list[3].title}}</h2>
+          <p>{{this.list[3].content}}</p>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
 // import {inWinodw} from '../assets/js/BackgroundMainContent'
 import intro from '../assets/intro_pic.jpg'
+import sydney from '../assets/sydney.jpg'
+import sydney2 from '../assets/sydney2.jpg'
+import shanghai from '../assets/shanghai.jpg'
+import chengdu from '../assets/chengdu.jpg'
 export default {
   name: 'content',
   data () {
     return {
       list: [
-        {id: 1, title: 'My Footprint', content: 'Now Sydney Based', src: intro},
-        {id: 2, title: 'Sydney', content: '2017 - Now', src: '../assets/intro.jpg'},
-        {id: 3, title: 'Shanghai', content: '2013 - 2017', src: '../assets/intro_pic.jpg'},
-        {id: 4, title: 'Chengdu', content: '1994 - 2013', src: '../assets/intro_pic.jpg'}
+        {id: 1, title: 'My Footprint', content: 'Now Sydney Based', src: sydney},
+        {id: 2, title: 'Sydney', content: '2017 - Now', src: sydney2},
+        {id: 3, title: 'Shanghai', content: '2013 - 2017', src: shanghai},
+        {id: 4, title: 'Chengdu', content: '1994 - 2013', src: chengdu}
       ],
       intro
     }
@@ -36,19 +64,20 @@ export default {
   },
   methods: {
     handleScroll () {
-      var scrollTop = document.documentElement.scrollTop
-      var visibleBottom = window.innerHeight + scrollTop
-      var visibleTop = scrollTop
-      var ul = this.$refs.contentUl
-      var li = ul.getElementsByClassName('list')
-      if (li) {
-        for (var i = 0; i < li.length; i++) {
-          if (li[i].offsetTop > visibleTop && li[i].offsetTop + 200 < visibleBottom) {
-            li[i].classList.add('animate__fadeInUp')
-          } else if (li[i].offsetTop >= visibleBottom) {
-            li[i].classList.remove('animate__fadeInUp')
-          }
+      var visibleTop = document.documentElement.scrollTop
+      var visibleBottom = window.innerHeight + visibleTop
+      var arr = this.$refs.MainContent
+      // var container = arr.getElementsByClassName('container')
+      var child1 = arr.getElementsByClassName('child1')
+      var child2 = arr.getElementsByClassName('child2')
+      for (var i = 0; i < child1.length; i++) {
+        var divBottom = child1[i].offsetTop + child1[i].offsetHeight
+        if (divBottom < visibleBottom) {
+          child1[i].classList.add('animate__fadeInLeft')
+          child2[i].classList.add('animate__fadeInRight')
         }
+
+        // console.log(container[i].offsetHeight)
       }
     }
   }
@@ -60,60 +89,35 @@ export default {
     width: 100%;
     background-color: black;
     overflow: hidden;
-  }
-  #contentUl{
     padding: 0;
   }
-  .icon{
-    margin-left: 20px;
-  }
-  .list_pic{
-    width: 400px;
-    height: 300px;
-    float: right;
-    transform: translateY(-100px);
-    margin: 50px 50px;
-    /*margin-right: 50%;*/
-  }
-  .list{
+  .container{
+    display: flex;
     width: 100%;
-    margin-top: 15%;
-    opacity: 0;
+    align-items: center;
+    padding: 0;
+    /*margin: 5% 0;*/
+  }
+  .child1{
+    text-align: center;
     color: white;
-    list-style: none;
-    margin-bottom: 25%;
-    /*background-color: chartreuse;*/
+    width: 50%;
+    /*visibility: hidden;*/
+    opacity: 0;
   }
-  .list:first-child>div>div{
-    margin-left: 15%;
+  .child2{
+    text-align: center;
+    color: white;
+    width: 50%;
+    /*visibility: hidden;*/
+    opacity: 0;
   }
-  .list:first-child>div>img{
-    margin-right: 25%;
+  .pic_right{
+    /*height: 200px;*/
+    width: 100%;
+    /*flex-shrink: 1;*/
   }
-  .list:nth-child(2n)>div>div{
-    padding-left: 40%;
-  }
-  .list:nth-child(2n)>div>img{
-    margin-right: 10%;
-  }
-  .list:nth-child(3n)>div>div{
-    padding-left: 65%;
-  }
-  .list:nth-child(3n)>div>img{
-    float: left;
-    margin-left: 20%;
-  }
-  .list:nth-child(4n)>div>div{
-    padding-left: 25%;
-  }
-  .list:nth-child(4n)>div>img{
-    margin-left: 5%;
-  }
-  .pInLi{
-    font-size: 2em;
-    display: block;
-  }
-  .footTitle{
-    font-size: 3em;
+  p{
+    font-size: 1.5em;
   }
 </style>
