@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <MyCanvas ref="MyCanvas"></MyCanvas>
+<!--    <MyCanvas ref="MyCanvas"></MyCanvas>-->
+    <IntroCanvas></IntroCanvas>
     <ImageHover></ImageHover>
-    <introduction ></introduction>
+    <Introduction2></Introduction2>
+<!--    <introduction ></introduction>-->
     <MainContent></MainContent>
-<!--    <SecondContent></SecondContent>-->
   </div>
 </template>
 
@@ -12,8 +13,9 @@
 import introduction from './components/introduction'
 import MainContent from './components/MainContent'
 import MyCanvas from './components/MyCanvas'
-import SecondContent from './components/SecondContent'
 import ImageHover from './components/ImageHover'
+import Introduction2 from './components/Introduction2'
+import IntroCanvas from './components/IntroCanvas'
 
 export default {
   name: 'App',
@@ -29,8 +31,9 @@ export default {
     introduction,
     MyCanvas,
     MainContent,
-    SecondContent,
-    ImageHover
+    ImageHover,
+    Introduction2,
+    IntroCanvas
   }
 }
 </script>
@@ -39,7 +42,7 @@ export default {
   html {
     scroll-behavior: smooth;
   }
-  h1,h2,p{
+  body{
     font-family: "Times New Roman",Times, serif;
   }
 

@@ -1,0 +1,117 @@
+.container{
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: #363640;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.star:before {
+  content: "";
+  box-shadow:
+    37vw 78vh #fff,
+    17vw 69vh #FFF,
+    68vw 4vh 1px #FFF,
+    98vw 9vh 1px #FFF,
+    45vw 67vh #FFF,
+    95vw 1vh 2px #fff,
+    35vw 75vh 2px #FFF,
+    44vw 47vh 1px #FFF,
+    54vw 5vh 1px #FFF,
+    22vw 29vh 1px #FFF,
+    39vw 71vh 1px #FFF,
+    11vw 11vh #FFF,
+    88vw 82vh #fff;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 50%;
+  animation: starsFloating 30s linear backwards infinite;
+}
+.star:after{
+  content: "";
+  box-shadow:
+    10vw 1vh #fff,
+    14vw 29vh 2px #FFF,
+    23vw 34vh 1px #FFF,
+    1vw 99vh 1px #FFF,
+    20vw 80vh #FFF,
+    90vw 10vh 2px #fff,
+    55vw 9vh #FFF,
+    24vw 4vh 1px #FFF,
+    50vw 99vh 1px #FFF,
+    74vw 40vh 1px #FFF,
+    80vw 9vh 1px #FFF,
+    20vw 80vh #FFF,
+    85vw 78vh #fff;
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  border-radius: 50%;
+  animation: starsFloating 40s linear backwards infinite;
+}
+@keyframes starsFloating {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90%{
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+}
+.main_intro{
+  width: 40vw;
+  height: 100vh;
+  flex-grow: 1;
+  flex-shrink: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left_side{
+  width: 20vmax;
+  height: 20vmax;
+  border: 1px solid black;
+  border-radius: 10vmax;
+  align-self: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  background-image: url("../img/moon1.jpg");
+  background-size: cover;
+  box-shadow: black -20px -20px 50px 2px inset, 0 0 20px 2px black;
+  animation: spin 30s linear infinite alternate;
+  transform: rotate(10deg);
+}
+.right_side{
+  align-self: flex-end;
+  width: 40vmax;
+  height: 40vmax;
+  border: 1px solid black;
+  border-radius: 20vmax;
+  flex-shrink: 0;
+  /*background-image: url("../img/earth1.jpg");*/
+  background-image: url("../../assets/world-296692_1280.png");
+  background-size: cover;
+  box-shadow: black -20px -20px 50px 2px inset, 0 0 20px 2px black;
+  animation: spin 30s linear infinite alternate;
+  transform: rotate(10deg);
+}
+@keyframes spin {
+  0% {
+    background-position: 100%;
+  }
+}
