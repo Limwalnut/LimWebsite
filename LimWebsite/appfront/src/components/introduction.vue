@@ -83,7 +83,6 @@ export default {
       "ls . h2 . .";
     /*transform: translateY(-88px);*/
   }
-
   #intro_heading{
     grid-area: h1;
     font-size: 3vw;

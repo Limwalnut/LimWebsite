@@ -1,39 +1,34 @@
 <template>
   <div id="app">
-<!--    <MyCanvas ref="MyCanvas"></MyCanvas>-->
     <IntroCanvas></IntroCanvas>
-    <ImageHover></ImageHover>
-    <Introduction2></Introduction2>
-<!--    <introduction ></introduction>-->
-    <MainContent></MainContent>
+    <HomePage></HomePage>
+    <AboutPage2></AboutPage2>
+    <SkillPage></SkillPage>
+<!--    <AboutPage></AboutPage>-->
+    <ExperiencePage></ExperiencePage>
+<!--    <MainContent></MainContent>-->
   </div>
 </template>
 
 <script>
-import introduction from './components/introduction'
-import MainContent from './components/MainContent'
-import MyCanvas from './components/MyCanvas'
-import ImageHover from './components/ImageHover'
-import Introduction2 from './components/Introduction2'
 import IntroCanvas from './components/IntroCanvas'
+import HomePage from './components/HomePage'
+import AboutPage from './components/AboutPage'
+import ExperiencePage from './components/ExperiencePage'
+import MainContent from './components/MainContent'
+import AboutPage2 from './components/AboutPage2'
+import SkillPage from './components/SkillPage'
 
 export default {
   name: 'App',
-  data () {
-    return {
-
-    }
-  },
-  methods: {
-
-  },
   components: {
-    introduction,
-    MyCanvas,
     MainContent,
-    ImageHover,
-    Introduction2,
-    IntroCanvas
+    HomePage,
+    AboutPage,
+    IntroCanvas,
+    ExperiencePage,
+    AboutPage2,
+    SkillPage
   }
 }
 </script>
@@ -44,10 +39,6 @@ export default {
   }
   body{
     font-family: "Times New Roman",Times, serif;
+    background-color: #f5f5f5;
   }
-
-  #app{
-    background-color: rgb(253, 253, 253);
-  }
-
 </style>

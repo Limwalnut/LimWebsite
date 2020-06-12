@@ -1,0 +1,507 @@
+.outer-wrap{
+  width: 100%;
+  height: 300vh;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow-y:hidden;
+}
+#text{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-content{
+  margin-top: 5vh;
+  color: white;
+  display: grid;
+  grid-template-columns: 15vw minmax(200px,15vw) minmax(200px,15vw) minmax(200px,15vw) minmax(200px,15vw) 15vw;
+  grid-template-rows: 10vh 25vh 25vh 25vh;
+  grid-template-areas:
+    "h1 . . .  . ."
+    "h1 html  css  js  python ."
+    "h1 git sql c . ."
+    "h1 csharp java . . .";
+}
+.technology{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: h1;
+  /*border: 3px solid deepskyblue;*/
+}
+.technology > h1{
+  font-size: 10rem;
+  transform: rotate(-90deg);
+}
+.grid-html{
+  grid-area: html;
+}
+.grid-css{
+  grid-area: css;
+}
+.grid-js{
+  grid-area: js;
+}
+.grid-python{
+  grid-area: python;
+}
+.grid-git{
+  grid-area: git;
+}
+.grid-sql{
+  grid-area: sql;
+}
+.grid-c{
+  grid-area: c;
+}
+.grid-csharp{
+  grid-area: csharp;
+}
+.grid-java{
+  grid-area: java;
+}
+.experience-container{
+  color: white;
+  height: 85vh;
+  width: 15vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border: 3px solid deepskyblue;*/
+}
+.experience-container>h1{
+  font-size: 10rem;
+  transform: rotate(-90deg);
+}
+.wrap{
+  width: 300%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-start;
+}
+.inner-item{
+  width: 55vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-text{
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+}
+.inner-content1{
+  width: 60%;
+  height: 50%;
+  /*background-color: #4cae4c;*/
+}
+.inner-content2{
+  width: 60%;
+  height: 50%;
+}
+.inner-content3{
+  width: 60%;
+  height: 50%;
+}
+.inner-content4{
+  width: 60%;
+  height: 50%;
+}
+.card-class{
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 0;
+  background-color: #363640;
+  box-shadow: 10px 10px 5px black;
+  transition: 1.5s;
+}
+.card1{
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 0;
+  background-color: #363640;
+}
+@media screen and (max-width: 800px) {
+  .card-class {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .card-class {
+    width: 100%;
+  }
+}
+.front, .back{
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
+.front {
+  background-size: cover;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.front:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  opacity: .25;
+  z-index: -1;
+}
+.card-class:hover{
+  box-shadow: 0 0 0 ;
+  transition: 0.5s;
+}
+.card-class:hover .front {
+  transform: rotateY(180deg);
+}
+.card-class:nth-child(even):hover .front {
+  transform: rotateY(-180deg);
+}
+.back {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+}
+.card-class:hover .back {
+  transform: rotateY(0deg);
+}
+.card-class:nth-child(even) .back {
+  transform: rotateY(180deg);
+}
+.card-class:nth-child(even):hover .back {
+  transform: rotateY(0deg);
+}
+.front-background-1{
+  background-image: url('../img/USYD2.jpg');
+}
+.front-background-2{
+  background-image: url('../img/USST.jpg');
+}
+.front-background-3{
+  background-image: url('../img/Neusoft.jpg');
+}
+.front-background-4{
+  background-image: url('../img/ChinaTelecom.jpg');
+}
+.container-skill {
+  padding: 50px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  color: #999;
+  font-size: 20px;
+  text-align: center;
+}
+
+.chart figcaption {
+  padding: 50px 25px;
+  width: 190px;
+  height: 189.6px;
+  border: 20px solid lightgray;
+  border-radius: 95px;
+  line-height: 50px;
+}
+
+.chart img {
+  position: absolute;
+  max-width: 100px;
+  max-height: 100px;
+  background-color: #363640
+}
+
+.html {
+  top: 50px;
+  left: 45px;
+}
+.html + svg .outer {
+  stroke: #e34f26;
+}
+.css {
+  top: 45px;
+  left: 48px;
+}
+.css + svg .outer {
+  stroke: #0d84ce;
+}
+.javascript {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.javascript + svg .outer {
+  stroke: #f0e040;
+}
+.python {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.python + svg .outer {
+  stroke: #3C78AA;
+}
+.git {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.git + svg .outer {
+  stroke: #2E5A8B;
+}
+.sql {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.sql + svg .outer {
+  stroke: #00CCFF;
+}
+.C {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.C + svg .outer {
+  stroke: #9C033A;
+}
+.csharp {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.csharp + svg .outer {
+  stroke: #7F31F2;
+}
+.java {
+  max-width: 90px;
+  max-height: 90px;
+  top: 45px;
+  left: 45px;
+}
+.java + svg .outer {
+  stroke: #6699FF;
+}
+
+.chart svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.outer {
+  fill: transparent;
+  stroke: #333;
+  stroke-width: 20;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+  -moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+.chart:hover .outer {
+  stroke-dashoffset: 534 !important;
+  -webkit-animation-play-state: paused;
+}
+
+.chart[data-percent='100'] .outer {
+  stroke-dashoffset: 0;
+  -webkit-animation: show100 2s;
+  animation: show100 2s;
+}
+
+.chart[data-percent='80'] .outer {
+  stroke-dashoffset: 107;
+  -webkit-animation: show100 2s;
+  animation: show100 2s;
+}
+
+.chart[data-percent='75'] .outer {
+  stroke-dashoffset: 133;
+  -webkit-animation: show75 2s;
+  animation: show75 2s;
+}
+.chart[data-percent='60'] .outer {
+  stroke-dashoffset: 214;
+  -webkit-animation: show50 2s;
+  animation: show50 2s;
+}
+
+.chart[data-percent='50'] .outer {
+  stroke-dashoffset: 267;
+  -webkit-animation: show50 2s;
+  animation: show50 2s;
+}
+
+.chart[data-percent='25'] .outer {
+  stroke-dashoffset: 401;
+  -webkit-animation: show25 2s;
+  animation: show25 2s;
+}
+/* END set initial animation values */
+
+/* Keyframes for the initial animation */
+@-webkit-keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show100 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 107;
+  }
+}
+
+@keyframes show80 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 107;
+  }
+}
+
+@-webkit-keyframes show75 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 134;
+  }
+}
+
+@keyframes show75 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 124;
+  }
+}
+@-webkit-keyframes show60 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 214;
+  }
+}
+
+@keyframes show60 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 214;
+  }
+}
+
+@-webkit-keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@keyframes show50 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 267;
+  }
+}
+
+@-webkit-keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 401;
+  }
+}
+
+@keyframes show25 {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 401;
+  }
+}

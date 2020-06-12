@@ -1,5 +1,5 @@
 <template>
-  <div id="intro" class="container" ref="container">
+  <div id="intro" class="container1" ref="container">
     <div class="star"></div>
     <div class="left_side" ref="moon"></div>
     <div class="main_intro" ref="main_intro">
@@ -45,5 +45,5 @@ export default {
 </script>
 
 <style scoped>
-  @import "../assets/css/IntroCSS.css";
+  @import "../assets/css/AboutPageCss.css";
 </style>

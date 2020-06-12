@@ -27,7 +27,6 @@ export default {
   #IntroCanvas{
     z-index: 0;
     position: absolute;
-    display: block;
     background-color: #2c343f;
     overflow: hidden;
     pointer-events: none;

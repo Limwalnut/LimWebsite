@@ -4,11 +4,11 @@ var light = {
   x: 0,
   y: 0
 }
-var colors = ['#f5c156', '#e6616b', '#5cd3ad']
+var colors = ['#ffcb05', '#e6616b', '#5cd3ad']
 
 var InitCanvas = function (canvas, window) {
   canvasObject = canvas
-  let canvasWidth = window.innerWidth
+  let canvasWidth = document.documentElement.clientWidth
   let canvasHeight = window.innerHeight
   canvas.width = canvasWidth
   canvas.height = canvasHeight
