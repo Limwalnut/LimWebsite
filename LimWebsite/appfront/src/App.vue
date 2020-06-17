@@ -1,44 +1,51 @@
 <template>
+  <div>
   <div id="app">
-    <IntroCanvas></IntroCanvas>
-    <HomePage></HomePage>
-    <AboutPage2></AboutPage2>
-    <SkillPage></SkillPage>
-<!--    <AboutPage></AboutPage>-->
-    <ExperiencePage></ExperiencePage>
-<!--    <MainContent></MainContent>-->
+    <router-view name="container1"></router-view>
+    <keep-alive><router-view name="container2"></router-view></keep-alive>
+    <router-view name="container3"></router-view>
+    <router-view name="container4"></router-view>
+    <router-view name="container5"></router-view>
+    <router-view name="container6"></router-view>
   </div>
+ </div>
 </template>
 
 <script>
-import IntroCanvas from './components/IntroCanvas'
 import HomePage from './components/HomePage'
-import AboutPage from './components/AboutPage'
-import ExperiencePage from './components/ExperiencePage'
-import MainContent from './components/MainContent'
 import AboutPage2 from './components/AboutPage2'
 import SkillPage from './components/SkillPage'
+import ProjectPage from './components/ProjectPage'
+import FuturePage from './components/FuturePage'
+import FooterPage from './components/FooterPage'
+import GalleryPage from './components/GalleryPage'
+import CodePage from "./components/CodePage";
+import DesignPage from "./components/DesignPage";
 
 export default {
   name: 'App',
   components: {
-    MainContent,
     HomePage,
-    AboutPage,
-    IntroCanvas,
-    ExperiencePage,
     AboutPage2,
-    SkillPage
-  }
+    SkillPage,
+    ProjectPage,
+    FuturePage,
+    FooterPage,
+    GalleryPage,
+    CodePage,
+    DesignPage
+  },
 }
 </script>
 
 <style>
+  @import "assets/font/font.css";
   html {
     scroll-behavior: smooth;
   }
   body{
-    font-family: "Times New Roman",Times, serif;
+    font-family: "FR",Times, serif;
     background-color: #f5f5f5;
+    position: relative;
   }
 </style>

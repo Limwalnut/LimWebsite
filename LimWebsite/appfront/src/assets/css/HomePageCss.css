@@ -1,3 +1,10 @@
+#IntroCanvas{
+  z-index: 0;
+  position: absolute;
+  background-color: #2c343f;
+  overflow: hidden;
+  pointer-events: none;
+}
 .container-homepage{
   padding: 0;
   margin: 0;
@@ -46,8 +53,12 @@
   align-items: center;
   font-size: 2rem;
 }
-.nav-content{
+.nav-content1{
   margin-left: 2vw;
+  transition: .1s;
+}
+.nav-content1:hover{
+  border-bottom: 3px white solid;
 }
 /*svg-name animation*/
 .wrapper-name{

@@ -1,5 +1,6 @@
 <template>
-  <div class="container-homepage" id="Home">
+  <div class="container-homepage" id="home">
+    <canvas ref="IntroCanvas" id="IntroCanvas"></canvas>
     <div class="wrapper-nav">
       <div class="logo-icon">
         <a href="#">
@@ -31,10 +32,11 @@
         </a>
       </div>
       <nav class="main-nav">
-        <a class="nav-content" href="#">About</a>
-        <a class="nav-content" href="#">Experience</a>
-        <a class="nav-content" href="#">Future</a>
-        <a class="nav-content" href="#">Contact</a>
+        <a class="nav-content1" href="" @click.prevent="">About</a>
+        <a class="nav-content1" href="" @click.prevent="">Skill</a>
+        <a class="nav-content1" href="" @click.prevent="">Project</a>
+        <a class="nav-content1" href="" @click.prevent="">Future</a>
+        <a class="nav-content1" href="" @click.prevent="">Contact</a>
       </nav>
     </div>
     <div class="wrapper-name">
@@ -463,7 +465,8 @@
 </template>
 
 <script>
-export default {
+  import {InitCanvas, draw} from '../assets/js/IntroCanvasJs'
+  export default {
   name: 'ImageHover',
   data () {
     return {
@@ -476,7 +479,31 @@ export default {
       typeArrayIndex: 0,
       charIndex: 0
     }
-  }
+  },
+  mounted () {
+    // resize the canvas when user change the window size
+    window.onresize = () => {
+      return (() => {
+        InitCanvas(this.$refs.IntroCanvas, window)
+      })()
+    }
+    // initiate the canvas size
+    InitCanvas(this.$refs.IntroCanvas, window)
+    // draw the mouse interaction
+    draw()
+
+    var nav = document.getElementsByClassName('nav-content1')
+    for (var i=0; i<nav.length; i++){
+      nav[i].addEventListener('click', function (e) {
+        // console.log(e)
+        var scroll_id = e.target.innerHTML.toLowerCase()
+        document.getElementById(scroll_id).scrollIntoView();
+      })
+    }
+  },
+    methods : {
+
+    }
 }
 </script>
 

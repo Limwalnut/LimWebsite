@@ -1,0 +1,146 @@
+.outer-wrap{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.container-text{
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 60px;
+  /*z-index: 5;*/
+  top: 5vh;
+}
+.section-container{
+  display: flex;
+  transition: .5s ease;
+  opacity: 1;
+}
+.project-section{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.5s;
+  flex-direction: column;
+}
+.photographer-button{
+  transition: 0.5s;
+  opacity: 0;
+}
+.developer-button{
+  transition: 0.5s;
+  opacity: 0;
+}
+.designer-button{
+  transition: 0.5s;
+  opacity: 0;
+}
+.project-section>h1{
+  background-color: dimgray;
+  color: whitesmoke;
+  padding: 15px 32px;
+}
+.photographer{
+  background: url("../intro_pic.jpg") #2c343f;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  filter: opacity(80%);
+}
+.designer{
+  background: url("../img/designer.jpg") #2c343f;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  filter: opacity(80%) ;
+}
+.developer{
+  background: url("../img/developer.jpg") #2c343f;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  filter: opacity(80%);
+}
+.photographer:hover{
+  background: url("../intro_pic.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: none;
+}
+.designer:hover{
+  background: url("../img/designer.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: none;
+}
+.developer:hover{
+  background: url("../img/developer.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: none;
+}
+.project-section:hover{
+  flex: 3;
+}
+.project-section:hover .photographer-button{
+  opacity: 1;
+}
+.project-section:hover .developer-button{
+  opacity: 1;
+}
+.project-section:hover .designer-button{
+  opacity: 1;
+}
+
+.section-container:hover + .container-text{
+  opacity: 0;
+}
+button {
+  background: white;
+  border: 3px solid #ffcb05;
+  border-radius: 5px;
+  color: #ffcb05;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 1em 2em;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+button:hover {
+  color: #000000;
+  background: #ffcb05;
+}
+@media screen and (max-width: 650px) {
+  .container-text{
+    display: none;
+  }
+  .section-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease;
+    opacity: 1;
+  }
+  .project-section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    transition: 0.5s;
+    flex-direction: column;
+  }
+}

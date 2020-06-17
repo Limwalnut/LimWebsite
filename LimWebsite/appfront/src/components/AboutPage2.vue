@@ -19,7 +19,16 @@
         </div>
       </div>
     </div>
-
+    <div class="navbar" ref="navbar">
+      <nav class="main-nav">
+        <a class="nav-content" href="" @click.prevent="toHome"></a>
+        <a class="nav-content" href="" @click.prevent="toAbout"></a>
+        <a class="nav-content" href="" @click.prevent="toSkill"></a>
+        <a class="nav-content" href="" @click.prevent="toProject"></a>
+        <a class="nav-content" href="" @click.prevent="toFuture"></a>
+        <a class="nav-content" href="" @click.prevent="toContact"></a>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -42,6 +51,24 @@ export default {
     window.addEventListener('scroll', this.handleScroll, true)
   },
   methods: {
+    toHome () {
+      document.getElementById('home').scrollIntoView();
+    },
+    toAbout () {
+      document.getElementById('about').scrollIntoView();
+    },
+    toSkill () {
+      document.getElementById('skill').scrollIntoView();
+    },
+    toProject () {
+      document.getElementById('project').scrollIntoView();
+    },
+    toFuture () {
+      document.getElementById('future').scrollIntoView();
+    },
+    toContact () {
+      document.getElementById('contact').scrollIntoView();
+    },
     handleScroll () {
       var visibleTop = document.documentElement.scrollTop
       var visibleBottom = window.innerHeight + visibleTop
@@ -52,6 +79,12 @@ export default {
       if (divBottom < visibleBottom) {
         child1.classList.add('fadeInRight')
         child2.classList.add('fadeInLeft')
+      }
+      var navbar = this.$refs.navbar
+      if (visibleTop >= document.documentElement.clientHeight) {
+        navbar.style.position = 'fixed'
+      } else {
+        navbar.style.position = 'absolute'
       }
     },
     typeText () {
@@ -83,6 +116,9 @@ export default {
   },
   created () {
     setTimeout(this.typeText, this.newTextDelay + 200)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
