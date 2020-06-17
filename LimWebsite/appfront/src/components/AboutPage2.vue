@@ -75,7 +75,7 @@ export default {
       var child1 = this.$refs.containerRight
       var child2 = this.$refs.containerLeft
       var containerAll = this.$refs.containerAll
-      var divBottom = containerAll.offsetTop + containerAll.offsetHeight / 2
+      var divBottom = containerAll.offsetTop + containerAll.offsetHeight/2 + window.innerHeight
       if (divBottom < visibleBottom) {
         child1.classList.add('fadeInRight')
         child2.classList.add('fadeInLeft')

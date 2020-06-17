@@ -3,19 +3,19 @@
     <div class="section-container">
       <section class="project-section photographer">
         <h1>Photographer</h1>
-        <router-link :to="{ name: 'GalleryPage' }">
+        <router-link :to="{ name: 'GalleryPage' }" class="routerLink">
           <button class="photographer-button">Discover</button>
         </router-link>
       </section>
       <section class="project-section developer">
         <h1>Developer</h1>
-        <router-link :to="{ name: 'CodePage' }">
+        <router-link :to="{ name: 'CodePage' }" class="routerLink">
           <button class="developer-button">Discover</button>
         </router-link>
       </section>
       <section class="project-section designer">
         <h1>Designer</h1>
-        <router-link :to="{ name: 'DesignPage' }">
+        <router-link :to="{ name: 'DesignPage' }" class="routerLink">
           <button class="designer-button">Discover</button>
         </router-link>
       </section>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'ProjectPage',
+  name: 'ProjectPage'
 }
 </script>
 

@@ -16,6 +16,10 @@
             <h1 class="caption2" @mouseover.stop="">MELBOURNE</h1>
             <img class="small-img" src="../assets/img/Melbourne2.jpg" alt="MELBOURNE">
           </div>
+          <div class="column-container">
+            <h1 class="caption2" @mouseover.stop="">KYOTO</h1>
+            <img class="small-img" src="../assets/img/Kyoto.jpg" alt="KYOTO">
+          </div>
         </div>
         <div class="column" @click.prevent="">
           <div class="column-container">
