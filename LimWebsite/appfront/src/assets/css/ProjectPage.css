@@ -17,8 +17,9 @@
   top: 5vh;
 }
 .section-container{
+  position: relative;
   display: flex;
-  transition: .5s ease;
+  transition: all .5s ;
   opacity: 1;
 }
 .project-section{
